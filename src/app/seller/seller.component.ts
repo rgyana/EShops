@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SellerService } from '../services/seller.service';
 
 @Component({
   selector: 'app-seller',
@@ -6,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller.component.css'],
 })
 export class SellerComponent implements OnInit {
-  constructor() {}
+  constructor( private sellerService: SellerService) {}
 
   ngOnInit(): void {}
 
   signUp(data: object): void {
-    console.log(data);
+    this.sellerService.userSignup(data);
   }
 }
