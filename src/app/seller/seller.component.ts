@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../services/seller.service';
-import { SignUp } from '../sign-up';
-import { Router } from '@angular/router';
+import { SignUp } from '../interfaces/sign-up';
+import { Login } from '../interfaces/login';
 
 @Component({
   selector: 'app-seller',
@@ -9,15 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./seller.component.css'],
 })
 export class SellerComponent implements OnInit {
-  constructor(private sellerService: SellerService, private router: Router) {}
+  showLogin = false;
+  authError : string = "";
 
-  ngOnInit(): void {}
+  constructor(private sellerService: SellerService) {}
+
+  ngOnInit(): void {
+    this.sellerService.reloadSeller();
+  }
 
   signUp(data: SignUp): void {
-    this.sellerService.userSignup(data).subscribe((result) => {
-      if (result) {
-        this.router.navigate(['seller-home']);
+    this.sellerService.userSignup(data);
+  }
+
+  login(data: Login): void{
+    this.sellerService.userLogin(data);
+    this.sellerService.isLoginError.subscribe((isError)=>{
+      if(isError){
+        this.authError = "Email or password is not currect. please enter valid inputs";
       }
-    });
+    })
+  }
+
+  openLogin() {
+    this.showLogin = true;
+  }
+
+  openSignup() {
+    this.showLogin = false;
   }
 }
