@@ -11,6 +11,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule} from '@angular/common/http';
     HomeComponent,
     SellerComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    SellerHomeComponent
   ],
   imports: [
     BrowserModule,

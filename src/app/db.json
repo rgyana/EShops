@@ -1,3 +1,32 @@
 {
-    "seller": []
+  "seller": [
+    {
+      "name": "gyana ranjan rout",
+      "email": "gyana@gmail.com",
+      "password": "gyana@58",
+      "phone": "7683876626",
+      "id": 1
+    },
+    {
+      "name": "sachin vergesee",
+      "email": "sachin@gmial.com",
+      "password": "sachin@58",
+      "phone": "9937438238",
+      "id": 2
+    },
+    {
+      "name": "eldhose bevachan",
+      "email": "eldhose@gmail.com",
+      "password": "eldhose@58",
+      "phone": "7538690300",
+      "id": 3
+    },
+    {
+      "name": "bruce",
+      "email": "bruce@test.com",
+      "password": "bruce@58",
+      "phone": "9873476451",
+      "id": 4
+    }
+  ]
 }
