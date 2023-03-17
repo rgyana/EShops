@@ -10,7 +10,7 @@ import { Login } from '../interfaces/login';
 })
 export class SellerComponent implements OnInit {
   showLogin = false;
-  authError : string = "";
+  authError: string = '';
 
   constructor(private sellerService: SellerService) {}
 
@@ -18,17 +18,20 @@ export class SellerComponent implements OnInit {
     this.sellerService.reloadSeller();
   }
 
+  // sign up function
   signUp(data: SignUp): void {
     this.sellerService.userSignup(data);
   }
 
-  login(data: Login): void{
+  // login function
+  login(data: Login): void {
     this.sellerService.userLogin(data);
-    this.sellerService.isLoginError.subscribe((isError)=>{
-      if(isError){
-        this.authError = "Email or password is not currect. please enter valid inputs";
+    this.sellerService.isLoginError.subscribe((isError) => {
+      if (isError) {
+        this.authError =
+          'Email or password is not currect. please enter valid inputs';
       }
-    })
+    });
   }
 
   openLogin() {
